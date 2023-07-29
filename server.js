@@ -4,7 +4,7 @@ const cors = require('cors')
 const bodyParser = require("body-parser")
 const dotenv = require('dotenv').config()
 const connectdb = require('./db/mongoosDB')
- 
+const {fileURLTopath} =require("url")
 const path = require('path')
 
 const port = process.env.PORT
@@ -15,7 +15,7 @@ app.use(bodyParser.json())
  
 //main routers 
  
- 
+ const _filename =fileURLTopath(import.meta.url)
 app.use('/api/v1/auth', require ('./router/authrouter'))
 app.use('/api/v1/auth',require('./router/doctorrouter'))
 app.use('/api/v1/auth',require('./router/patientRoute'))
