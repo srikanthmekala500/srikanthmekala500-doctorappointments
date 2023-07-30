@@ -27,7 +27,7 @@ app.use('/api/v1/auth',require('./router/patientRoute'))
 app.use(express.static(path.join(__dirname,"./client/build")))
 
 app.get("*",function(req,res){
-res.sendFile(path.join(__dirname,"/client/build/index.html"))
+res.sendFile(path.join(__dirname,"./build/index.html"))
 })
 app.listen(port,()=>{
     console.log(`server get started ${process.env.DEV_MODEL} ${port}`)
